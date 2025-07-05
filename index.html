@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday, Nimi 🌸</title>
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      overflow-x: hidden;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-top: 1.5rem;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+    .photo {
+      margin: 1rem auto;
+    }
+    .photo img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      box-shadow: 0 0 30px #ff66cc;
+    }
+    .poem {
+      white-space: pre-line;
+      font-size: 1.2rem;
+      margin: 1rem auto;
+      max-width: 600px;
+      animation: fadein 3s ease;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ff00cc, 0 0 20px #ff00cc; }
+      to   { text-shadow: 0 0 20px #ffcc00, 0 0 30px #ffcc00; }
+    }
+    @keyframes fadein {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎂 Happy Birthday, Nimi 🌸</h1>
+  <div class="photo">
+    <img src="ruksar_glow_circle.png" alt="Ruksar's Photo">
+  </div>
+  <div class="poem">
+    In a world so loud, you're a quiet light,<br>
+    Kindness in your words, and stars in your smile.<br>
+    May your day be calm, your heart feel full,<br>
+    Like soft songs played under a sky so beautiful.<br><br>
+    You’re one of the rare, the pure, the few,<br>
+    The kind of soul that makes life feel new.<br><br>
+    Keep shining, stay you — so simple, so bright.<br>
+    Wishing you joy, peace, and music tonight. 🎶<br><br>
+    – Always the one who believes in you 🌷<br>
+    <br>
+  </div>
+
+  <canvas id="fireworks"></canvas>
+
+  <audio autoplay loop>
+    <source src="happy_music.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="https://cdn.jsdelivr.net/npm/fireworks-js@2.1.0/dist/fireworks.js"></script>
+  <script>
+    const container = document.getElementById('fireworks');
+    const fireworks = new Fireworks.default(container, {
+      autoresize: true,
+      opacity: 0.5,
+      acceleration: 1.02,
+      friction: 0.96,
+      gravity: 1.2,
+      particles: 80,
+      trace: 3,
+      explosion: 5,
+    });
+    fireworks.start();
+  </script>
+</body>
+</html>
